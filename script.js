@@ -29,6 +29,52 @@ function updateCountdown() {
     `;
 }
 
+
+/*visible effect
+
+document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll("section"); // Target all sections
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("section-visible");
+                observer.unobserve(entry.target); // Stop observing once it's visible
+            }
+        });
+    }, { threshold: 0.5 }); // Trigger when 10% of the section is visible
+
+    sections.forEach((section) => {
+        section.classList.add("section-hidden"); // Start with hidden state
+        observer.observe(section); // Observe each section
+    });
+});
+
+*/
+
+
+const cursor = document.createElement("div");
+cursor.className = "custom-cursor";
+document.body.appendChild(cursor);
+
+document.addEventListener("mousemove", (e) => {
+    cursor.style.left = `${e.pageX}px`;
+    cursor.style.top = `${e.pageY}px`;
+});
+
+document.addEventListener("mousedown", () => {
+    cursor.style.transform = "scale(1.5)";
+    cursor.style.background = "#79d2e6";
+});
+
+document.addEventListener("mouseup", () => {
+    cursor.style.transform = "scale(1)";
+    cursor.style.background = "#0056b3";
+});
+
+
+
+
 // Update countdown every second
 setInterval(updateCountdown, 1000);
 

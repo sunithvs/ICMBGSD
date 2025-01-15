@@ -14,6 +14,22 @@
     box-sizing: border-box;
 }
 
+
+/* Initially hide sections */
+.section-hidden {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* When visible, show sections */
+.section-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--primary-dark);
@@ -44,79 +60,111 @@ nav {
     color: var(--accent-blue);
 }
 
+
+
+
+
+
 .hero-section {
-    background-color: #ebf3f5;
-    min-height: 100vh;
+    background-color: #dbfcfc;
+    min-height: 100vh; /* Full viewport height */
     display: flex;
-    align-items: center;
-    padding: 2rem;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    padding: 3rem 2rem;
     position: relative;
-    overflow: hidden;
-    gap: 2rem;
+    text-align: center; /* Center align all text */
 }
 
 .hero-content {
-    flex: 1;
+    font-family: 'Merriweather', serif;
+    max-width: 800px; /* Restrict the content width for better readability */
     padding: 2rem;
-    z-index: 1;
-    position: relative;
-}
-
-.hero-image {
-    flex: 1;
-    min-height: 100vh;
-    position: relative;
-    overflow: hidden;
-}
-
-.hero-image img {
-    width: 60%;  /* Smaller size for desktop */
-    height: auto;
-    object-fit: contain;
-    margin: auto;
-    display: block;
-}
-
-.hero-image::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
 }
 
 h1 {
     font-size: 4rem;
-    color: var(--deep-sea);
+    color: #0056b3;
     margin-bottom: 1rem;
 }
 
 h2 {
     font-size: 2rem;
+    color: #333333;
     margin-bottom: 2rem;
+    line-height: 1.5;
 }
 
-.event-details {
-    margin-bottom: 2rem;
+.event-details p {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
 }
 
 .countdown {
     display: flex;
     gap: 2rem;
-    margin-bottom: 3rem;
+    justify-content: center; /* Center countdown */
+    margin-bottom: 2rem;
 }
 
 .countdown div {
     text-align: center;
-    padding: 1rem;
-    background: rgba(79, 209, 197, 0.1);
-    border-radius: 10px;
+    background: rgba(79, 209, 197, 0.2);
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100px;
+    transition: transform 0.3s ease;
 }
 
-section {
-    padding: 5rem 2rem;
+.countdown div:hover {
+    transform: translateY(-5px);
 }
+
+.countdown h3 {
+    font-size: 2rem;
+    color: #0056b3;
+    margin: 0;
+}
+
+.countdown p {
+    font-size: 1rem;
+    color: #555555;
+}
+
+.department-name h3,
+.department-name h4 {
+    margin-bottom: 0.5rem;
+    color: #444;
+}
+
+.association-info {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+}
+
+.hero-content {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+
+
+
 
 .about-section, .themes-section, .dates-section, .registration-section, .contact-section {
     background: linear-gradient(rgba(240, 244, 248, 0.95), rgba(255, 255, 255, 0.95));
@@ -338,64 +386,37 @@ section {
 
 
 
-/* Speaker section */
+/* Speaker Section */
+.speakers-grid {
+    display: flex;
+    flex-wrap: wrap;    
+    justify-content: center; /* Center the rows */
+    gap: 2rem;
+}
+
+.speaker-card {
+    width: 250px; /* Fixed width for consistent size */
+    background: #f9f9f9;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center-align text */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease; /* Adding transition for opacity */
+    
+}
+
+
 .card-image img {
     width: 100%;
     height: auto;
     border-radius: 10px;
 }
 
-.card-content {
-    text-align: center;
-    padding: 1rem;
-    background: #fff;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-top: -1rem;
-    z-index: 1;
-    position: relative;
+.card-content h3,
+.card-content p {
+    margin: 0.5rem 0;
 }
 
-/* Grid Layouts */
-.speakers-grid, .guidelines-grid, .accommodation-grid, .committee-grid {
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 2rem;
-}
-
-.speaker-card, .guidelines-card, .accommodation-card, .committee-card {
-    flex: 1;
-    max-width: 300px;
-    background: #f9f9f9;
-    padding: 1rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.speaker-card:hover, .guidelines-card:hover, .accommodation-card:hover, .committee-card:hover {
-    transform: translateY(-10px);
-}
-
-.association-info p {
-    margin-bottom: 0.3rem;
-}
-
-.association-info p:first-child {
-    color: var(--accent-blue);
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-}
-
-footer {
-    background-color: var(--primary-light);
-    padding: 2rem;
-    text-align: center;
-    border-top: 1px solid rgba(0, 180, 216, 0.2);
-}
 
 
 
@@ -431,31 +452,48 @@ footer {
     margin: 0 auto;
 }
 
+/* Theme Card Styling */
 .theme-card {
-    background: rgba(0, 180, 216, 0.05);
+    background: rgba(0, 180, 216, 0.1);
     padding: 2rem;
     border-radius: 15px;
     text-align: center;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease; /* Adding transition for opacity */
     border: 1px solid rgba(79, 209, 197, 0.1);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    opacity: 0;
+    opacity: 0.9; /* Set initial opacity */
 }
 
+/* Hover effect */
 .theme-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px); /* Slightly more pronounced movement */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+    opacity: 1; /* Full opacity on hover */
 }
 
 .theme-card i {
     font-size: 2.5rem;
     color: var(--accent-blue);
     margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+/* Slight rotation effect for the icon when hovered */
+.theme-card:hover i {
+    transform: rotate(10deg); /* Icon rotates slightly on hover */
 }
 
 .theme-card h3 {
     color: var(--accent-yellow);
     font-size: 1.3rem;
     line-height: 1.4;
+    transition: transform 0.3s ease;
+    margin-top: 10px;
+}
+
+/* Slight movement for text on hover */
+.theme-card:hover h3 {
+    transform: translateY(-5px); /* Text moves up slightly on hover */
 }
 
 
@@ -467,6 +505,59 @@ footer {
 
 
 
+/* Guid lines  Section */
+
+.guidelines-grid {
+    display: flex;
+    gap: 2rem; /* Spacing between the cards */
+    justify-content: center; /* Center-align the grid content */
+    align-items: center; /* Align items vertically to the center */
+    flex-wrap: wrap; /* Ensure cards wrap if there's not enough space */
+    margin-top: 2rem;
+}
+
+.guidelines-card1{
+    background: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 300px; /* Ensure uniform card width */
+    flex: 1; /* Allow cards to resize proportionally */
+    text-align: center; /* Center-align text */
+    transition: transform 0.3s ease;
+}
+.guidelines-card2{
+    background: #f9f9f9;
+    padding: 1.8rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 300px; /* Ensure uniform card width */
+    flex: 1; /* Allow cards to resize proportionally */
+    text-align: center; /* Center-align text */
+    transition: transform 0.3s ease;
+}
+
+.guidelines-card1:hover,.guidelines-card2:hover{
+    transform: translateY(-5px); /* Add a hover effect */
+}*/
+
+.guidelines-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-blue); /* Adjust color for headings */
+}
+
+.guidelines-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.guidelines-card ul li {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    color: #333; /* Adjust text color */
+}
 
 
 
@@ -655,6 +746,95 @@ footer {
 
 
 
+/* General Section Styling */
+.committee-section {
+    padding: 4rem 2rem;
+    background: #f7faff;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.underline {
+    width: 80px;
+    height: 4px;
+    background: #0056b3;
+    margin: 0.5rem auto;
+    border-radius: 5px;
+}
+
+/* Sub-Sections */
+.sub-section {
+    margin-bottom: 3rem;
+}
+
+.sub-section h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+/* Grid Layout */
+.committee-grid {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Individual Card Styling */
+.committee-card {
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 3px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 200px;
+}
+
+.committee-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.committee-card img {
+    width: 120px; /* Adjust width as needed */
+    height: 130px; /* Adjust height as needed */
+    border-radius: 15px; /* Curved corners */
+    margin-bottom: 1rem;
+    object-fit:contain /* Ensures the image fits properly */
+    border 2px solid #0056b3;
+}
+
+.committee-card h4 {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+    color: #0056b3;
+}
+
+.committee-card p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -699,7 +879,7 @@ h3 {
 
 /* Each Hotel Box */
 .hotel-box {
-    width: 150px; /* Increase box size */
+    width: 250px; /* Increase box size */
     height: 200px; /* Adjust height */
     background-color: #f0f0f0; /* Light background */
     border-radius: 8px; /* Rounded corners */
@@ -824,13 +1004,14 @@ h3 {
 
 .contact-form-container {
     flex: 1;
+    
 }
 
 .contact-form {
     background: rgba(79, 209, 197, 0.05);
-    padding: 2rem;
+    padding: 7rem;
     border-radius: 15px;
-    border: 1px solid rgba(79, 209, 197, 0.1);
+    border: 1px solid rgba(2, 9, 9, 0.1);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
@@ -844,7 +1025,7 @@ h3 {
     width: 100%;
     padding: 0.8rem;
     background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(79, 209, 197, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 8px;
     color: var(--text-light);
     font-size: 1rem;
@@ -923,6 +1104,7 @@ h3 {
 
 
 /* Footer */
+
 .footer {
     background: var(--primary-light);
     padding: 4rem 2rem 1rem;
@@ -933,10 +1115,12 @@ h3 {
 .footer-content {
     max-width: 1200px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 3rem;
-    margin-bottom: 3rem;
+    display: flex; /* Ensures a row layout */
+    flex-direction: row; /* Makes sure items are arranged in a row */
+    justify-content: space-between; /* Spaces out the items evenly */
+    align-items: flex-start; /* Aligns items to the top */
+    gap: 3rem; /* Adds spacing between items */
+    margin-bottom: 3rem; /* Adds space below the footer content */
 }
 
 .footer-section h3 {
@@ -1064,7 +1248,7 @@ h3 {
 
 .slide-in-right {
     animation: slideInRight 1s ease forwards;
-}
+} 
 
 /* Mobile Menu Styles */
 .mobile-menu-btn {
@@ -1351,7 +1535,7 @@ h3 {
 
 /* Hover Effect with Pure Up-and-Down Movement */
 .speaker-card:hover, .guidelines-card:hover, .accommodation-card:hover, .committee-card:hover {
-    animation: upAndDown 0.8s ease-in-out infinite;
+    animation: upAndDown 0.8s ;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
@@ -1365,10 +1549,6 @@ h3 {
     }
 }
 
-/* Smooth Transition for Non-Hover State */
-.speaker-card, .guidelines-card, .accommodation-card, .committee-card {
-    transition: box-shadow 0.3s ease;
-}
 
 
 
