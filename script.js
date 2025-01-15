@@ -174,3 +174,18 @@ document.addEventListener('click', (e) => {
         document.body.style.overflow = '';
     }
 });
+
+// Theme Section Interaction
+document.querySelectorAll('.theme-card').forEach(card => {
+    card.addEventListener('click', function () {
+        // If the clicked card is already active, collapse it
+        if (this.classList.contains('active')) {
+            this.classList.remove('active');
+        } else {
+            // Collapse all other cards
+            document.querySelectorAll('.theme-card').forEach(c => c.classList.remove('active'));
+            // Expand the clicked card
+            this.classList.add('active');
+        }
+    });
+});

@@ -433,73 +433,106 @@ h2 {
 
 
 
-
-
-
-
-
-/* Themes Section */
-.themes-section {
-    padding: 6rem 2rem;
-    background: linear-gradient(to bottom, rgba(240, 244, 248, 0.95), rgba(255, 255, 255, 0.95));
-}
-
+/* Themes Section Styling */
 .themes-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem; /* Space between rows */
+    max-width: 800px; /* Restrict total width */
+    margin: 0 auto; /* Center-align grid */
 }
 
 /* Theme Card Styling */
 .theme-card {
-    background: rgba(0, 180, 216, 0.1);
-    padding: 2rem;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     border-radius: 15px;
+    overflow: hidden;
+    width: 800px; /* Set fixed width (equivalent to ~20 cm) */
+    height: 75px; /* Default collapsed height (equivalent to ~1.5 cm) */
+    cursor: pointer;
+    transition: transform 0.3s ease, height 0.5s ease;
+    opacity: 0.9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease; /* Adding transition for opacity */
-    border: 1px solid rgba(79, 209, 197, 0.1);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    opacity: 0.9; /* Set initial opacity */
 }
 
-/* Hover effect */
-.theme-card:hover {
-    transform: translateY(-10px); /* Slightly more pronounced movement */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
-    opacity: 1; /* Full opacity on hover */
+.theme-card.active {
+    height: auto; /* Expand to fit content */
+    padding-bottom: 1rem; /* Add space below */
 }
 
-.theme-card i {
-    font-size: 2.5rem;
-    color: var(--accent-blue);
-    margin-bottom: 1.5rem;
-    transition: transform 0.3s ease;
+/* Content Container */
+.theme-content {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    z-index: 2;
+    transition: all 0.5s ease;
 }
 
-/* Slight rotation effect for the icon when hovered */
-.theme-card:hover i {
-    transform: rotate(10deg); /* Icon rotates slightly on hover */
+/* Title Styling */
+.theme-title {
+    font-size: 1.5rem;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    margin: 0;
+    color: #ffffff;
+    text-align: center;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.theme-card h3 {
+.theme-card.active .theme-title {
+    transform: translateY(-10px); /* Move up slightly when expanded */
     color: var(--accent-yellow);
-    font-size: 1.3rem;
+}
+
+/* Description Styling */
+.theme-description {
+    display: none; /* Hidden by default */
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    opacity: 0;
+    margin-top: 0.5rem;
+    color: #232221;
+    font-size: 1rem;
     line-height: 1.4;
-    transition: transform 0.3s ease;
-    margin-top: 10px;
+    text-align: justify;
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-/* Slight movement for text on hover */
-.theme-card:hover h3 {
-    transform: translateY(-5px); /* Text moves up slightly on hover */
+.theme-card.active .theme-description {
+    display: block; /* Show when card is active */
+    opacity: 1;
+    transform: translateY(10px); /* Smoothly appear below title */
 }
 
 
+.theme-image {
+    display: none; /* Hidden by default */
+    width: 50%; /* Adjust the width to fit within the card */
+    height:200px; /* Maintain aspect ratio */
+    border-radius: 15px; /* Curved sides */
+    margin: 1rem 0; /* Space around the image */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    border: 2px solid #c5dee2; /* Simple white border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for better visibility */
+  
+}
 
-
-
+.theme-card.active .theme-image {
+    display: block; /* Show when card is active */
+    opacity: 1; /* Fade-in effect */
+    transform: translateY(10px); /* Smooth appearance */
+}
 
 
 
@@ -1102,107 +1135,158 @@ h3 {
 
 
 
-
-/* Footer */
-
+/* Footer Styles */
 .footer {
-    background: var(--primary-light);
-    padding: 4rem 2rem 1rem;
-    color: var(--text-light);
-    border-top: 1px solid rgba(0, 180, 216, 0.2);
+    background-color: #f3fafb;
+    color: #2a4d53;
+    padding: 40px 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 0 -3px 6px rgba(0, 0, 0, 0.1);
 }
 
-.footer-content {
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
     max-width: 1200px;
     margin: 0 auto;
-    display: flex; /* Ensures a row layout */
-    flex-direction: row; /* Makes sure items are arranged in a row */
-    justify-content: space-between; /* Spaces out the items evenly */
-    align-items: flex-start; /* Aligns items to the top */
-    gap: 3rem; /* Adds spacing between items */
-    margin-bottom: 3rem; /* Adds space below the footer content */
 }
 
-.footer-section h3 {
-    text-align: center;
-    margin-bottom: 1rem;
-    color: var(--accent-yellow);
+.footer-about,
+.footer-links,
+.footer-contact {
+    flex: 1;
+    min-width: 250px;
+    margin: 10px 20px;
 }
 
-.footer-section .social-links {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-top: 1rem;
+.footer-about h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #0056b3;
 }
 
-.footer-section .social-link {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: rgba(79, 209, 197, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--accent-blue);
-    font-size: 1.2rem;
-    transition: all 0.3s ease;
+.footer-about p {
+    font-size: 15px;
+    line-height: 1.8;
+    text-align: justify;
 }
 
-.footer-section .social-link:hover {
-    background: var(--accent-blue);
-    color: var(--primary-dark);
-    transform: translateY(-3px);
+.footer-links h4,
+.footer-contact h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #0056b3;
 }
 
-.footer-section ul {
+.footer-links ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
-.footer-section ul li {
-    margin-bottom: 0.8rem;
+.footer-links ul li {
+    margin-bottom: 10px;
 }
 
-.footer-section ul a {
-    color: var(--text-light);
+.footer-links ul li a {
+    color: #1b3136;
     text-decoration: none;
+    font-size: 15px;
     transition: color 0.3s ease;
 }
 
-.footer-section ul a:hover {
-    color: var(--accent-blue);
+.footer-links ul li a:hover {
+    color: #007bff;
 }
 
-.social-links {
-    display: flex;
-    gap: 1rem;
+.footer-contact p {
+    font-size: 15px;
+    line-height: 1.6;
 }
 
-.social-link {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: rgba(79, 209, 197, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-light);
+.footer-contact a {
+    color: #0056b3;
     text-decoration: none;
-    transition: all 0.3s ease;
 }
 
-.social-link:hover {
-    background: var(--accent-blue);
-    color: white;
-    transform: translateY(-3px);
+.footer-contact a:hover {
+    text-decoration: underline;
 }
 
 .footer-bottom {
     text-align: center;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    background-color: #e9f5f7;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #4b4b4b;
 }
+
+.back-to-top {
+    text-align: right;
+    padding: 10px 20px;
+}
+
+.back-to-top a {
+    background-color: #007bff;
+    color: #ffffff;
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 50%;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.back-to-top a:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+.back-to-top i {
+    font-size: 18px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-about,
+    .footer-links,
+    .footer-contact {
+        margin: 20px 0;
+    }
+
+    .back-to-top {
+        text-align: center;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Animations */
 @keyframes fadeIn {
@@ -1428,6 +1512,7 @@ h3 {
         justify-content: center;
     }
 }
+
 
 @media (max-width: 480px) {
     .countdown div {
