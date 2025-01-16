@@ -8,6 +8,11 @@
     --deep-sea: #023e8a;  /* Deep sea blue */
 }
 
+section {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 20px;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -44,11 +49,15 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(234, 248, 247, 0.9);
+    background-color: #f0f8fa;
     border-bottom: 1px solid rgba(0, 180, 216, 0.2);
     z-index: 1000;
 }
 
+nav a:hover {
+    color: #007bff;
+    border-bottom: 2px solid #82b3d8;
+}
 .nav-links a {
     color: var(--deep-sea);
     text-decoration: none;
@@ -66,7 +75,7 @@ nav {
 
 
 .hero-section {
-    background-color: #dbfcfc;
+    background-color: #eaf8f7;
     min-height: 100vh; /* Full viewport height */
     display: flex;
     align-items: center; /* Center vertically */
@@ -79,18 +88,18 @@ nav {
 .hero-content {
     font-family: 'Merriweather', serif;
     max-width: 800px; /* Restrict the content width for better readability */
-    padding: 2rem;
+    padding: 3.8rem;
 }
 
 h1 {
     font-size: 4rem;
-    color: #0056b3;
+    color: #004d4d;
     margin-bottom: 1rem;
 }
 
 h2 {
     font-size: 2rem;
-    color: #333333;
+    color: #1e6969;
     margin-bottom: 2rem;
     line-height: 1.5;
 }
@@ -131,6 +140,235 @@ h2 {
     font-size: 1rem;
     color: #555555;
 }
+
+
+
+
+
+
+
+
+
+.container {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .label {
+    background-color: transparent;
+    border: 2px solid #2ec4b6;
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+    width: 232px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    padding: 5px;
+    position: relative;
+  }
+  
+  .label::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    width: 8px;
+    height: 8px;
+    transition: all 0.4s ease;
+    border-radius: 100%;
+    margin: auto;
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  .label .input {
+    display: none;
+  }
+  
+  .label .title {
+    font-size: 17px;
+    color: #06343c;
+    transition: all 0.4s ease;
+    position: absolute;
+    right: 18px;
+    bottom: 14px;
+    text-align: center;
+  }
+  
+  .label .title:last-child {
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  .label .circle {
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    background-color: rgb(111, 179, 191);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s ease;
+    position: relative;
+    box-shadow: 0 0 0 0 rgb(255, 255, 255);
+    overflow: hidden;
+  }
+  
+  .label .circle .icon {
+    color: #fff;
+    width: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.4s ease;
+  }
+  
+  .label .circle .square {
+    aspect-ratio: 1;
+    width: 15px;
+    border-radius: 2px;
+    background-color: #fff;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.4s ease;
+  }
+  
+  .label .circle::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #06343c;
+    width: 100%;
+    height: 0;
+    transition: all 0.4s ease;
+  }
+  
+  .label:has(.input:checked) {
+    width: 57px;
+    animation: installed 0.4s ease 3.5s forwards;
+  }
+  
+  .label:has(.input:checked)::before {
+    animation: rotate 3s ease-in-out 0.4s forwards;
+  }
+  
+  .label .input:checked + .circle {
+    animation:
+      pulse 1s forwards,
+      circleDelete 0.2s ease 3.5s forwards;
+    rotate: 180deg;
+  }
+  
+  .label .input:checked + .circle::before {
+    animation: installing 3s ease-in-out forwards;
+  }
+  
+  .label .input:checked + .circle .icon {
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  .label .input:checked ~ .circle .square {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .label .input:checked ~ .title {
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  .label .input:checked ~ .title:last-child {
+    animation: showInstalledMessage 0.4s ease 3.5s forwards;
+  }
+  
+  @keyframes pulse {
+    0% {
+      scale: 0.95;
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+    }
+    70% {
+      scale: 1;
+      box-shadow: 0 0 0 16px rgba(255, 255, 255, 0);
+    }
+    100% {
+      scale: 0.95;
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+  }
+  
+  @keyframes installing {
+    from {
+      height: 0;
+    }
+    to {
+      height: 100%;
+    }
+  }
+  
+  @keyframes rotate {
+    0% {
+      transform: rotate(-90deg) translate(27px) rotate(0);
+      opacity: 1;
+      visibility: visible;
+    }
+    99% {
+      transform: rotate(270deg) translate(27px) rotate(270deg);
+      opacity: 1;
+      visibility: visible;
+    }
+    100% {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+  
+  @keyframes installed {
+    100% {
+      width: 150px;
+      border-color: rgb(45, 116, 121);
+    }
+  }
+  
+  @keyframes circleDelete {
+    100% {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+  
+  @keyframes showInstalledMessage {
+    100% {
+      opacity: 1;
+      visibility: visible;
+      right: 56px;
+    }
+  }
+  
+
+
+
+
+
+
+
+
+
+
 
 .department-name h3,
 .department-name h4 {
@@ -550,7 +788,7 @@ h2 {
 }
 
 .guidelines-card1{
-    background: #f9f9f9;
+    background: rgba(240, 244, 248, 0.95);
     padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -560,7 +798,7 @@ h2 {
     transition: transform 0.3s ease;
 }
 .guidelines-card2{
-    background: #f9f9f9;
+    background: rgba(240, 244, 248, 0.95);
     padding: 1.8rem;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -575,23 +813,10 @@ h2 {
 }*/
 
 .guidelines-card h3 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin-bottom: 1rem;
     color: var(--primary-blue); /* Adjust color for headings */
 }
-
-.guidelines-card ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.guidelines-card ul li {
-    margin: 0.5rem 0;
-    font-size: 1rem;
-    color: #333; /* Adjust text color */
-}
-
 
 
 
@@ -1134,7 +1359,6 @@ h3 {
 
 
 
-
 /* Footer Styles */
 .footer {
     background-color: #f3fafb;
@@ -1215,40 +1439,67 @@ h3 {
     text-decoration: underline;
 }
 
+/* Privacy and Terms Section */
+.footer-policy {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+.footer-policy a {
+    color: #0056b3;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.footer-policy a:hover {
+    color: #007bff;
+}
+
 .footer-bottom {
     text-align: center;
     padding: 10px;
-    background-color: #e9f5f7;
+    
     margin-top: 20px;
     font-size: 14px;
     color: #4b4b4b;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .back-to-top {
-    text-align: right;
-    padding: 10px 20px;
+    position: fixed; /* Fix it to the viewport */
+    bottom: 20px; /* Distance from the bottom */
+    right: 20px; /* Distance from the right */
+    z-index: 100; /* Ensure it's above other elements */
 }
 
 .back-to-top a {
-    background-color: #007bff;
+    background-color: #1d7478;
     color: #ffffff;
     font-size: 14px;
-    padding: 10px;
-    border-radius: 50%;
+    width: 40px; /* Equal width and height */
+    height: 40px; /* Equal width and height */
+    border-radius: 50%; /* Make it circular */
     text-decoration: none;
-    display: inline-block;
+    display: flex; /* Flexbox for centering */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
     transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Optional: add a shadow */
 }
 
 .back-to-top a:hover {
-    background-color: #0056b3;
+    background-color: #144e56;
     transform: scale(1.1);
 }
 
 .back-to-top i {
-    font-size: 18px;
+    font-size: 18px; /* Icon size remains unchanged */
 }
-
 /* Responsive Design */
 @media screen and (max-width: 768px) {
     .footer-container {
@@ -1266,8 +1517,6 @@ h3 {
         text-align: center;
     }
 }
-
-
 
 
 
