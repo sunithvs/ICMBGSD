@@ -1,11 +1,11 @@
 :root {
-    --primary-dark: #ffffff;  /* White background */
-    --primary-light: #f0f4f8;  /* Light seafoam white */
-    --accent-blue: #00b4d8;  /* Bright ocean blue */
-    --accent-yellow: #1e3a8a;  /* Deep navy blue (replacing yellow) */
-    --text-light: #2a4365;  /* Dark blue text */
-    --secondary-blue: #48cae4;  /* Medium ocean blue */
-    --deep-sea: #023e8a;  /* Deep sea blue */
+    --primary-dark: #ffffff;  
+    --primary-light: #f0f4f8;  
+    --accent-blue: #00b4d8;  
+    --accent-yellow: #1e3a8a;  
+    --text-light: #2a4365;  
+    --secondary-blue: #48cae4;  
+    --deep-sea: #023e8a;  
 }
 
 section {
@@ -76,18 +76,18 @@ nav a:hover {
 
 .hero-section {
     background-color: #eaf8f7;
-    min-height: 100vh; /* Full viewport height */
+    min-height: 100vh; 
     display: flex;
-    align-items: center; /* Center vertically */
-    justify-content: center; /* Center horizontally */
+    align-items: center; 
+    justify-content: center; 
     padding: 3rem 2rem;
     position: relative;
-    text-align: center; /* Center align all text */
+    text-align: center; 
 }
 
 .hero-content {
     font-family: 'Merriweather', serif;
-    max-width: 800px; /* Restrict the content width for better readability */
+    max-width: 800px; 
     padding: 3.8rem;
 }
 
@@ -112,7 +112,7 @@ h2 {
 .countdown {
     display: flex;
     gap: 2rem;
-    justify-content: center; /* Center countdown */
+    justify-content: center; 
     margin-bottom: 2rem;
 }
 
@@ -628,18 +628,18 @@ h2 {
 .speakers-grid {
     display: flex;
     flex-wrap: wrap;    
-    justify-content: center; /* Center the rows */
+    justify-content: center; 
     gap: 2rem;
 }
 
 .speaker-card {
-    width: 250px; /* Fixed width for consistent size */
+    width: 250px; 
     background: #f9f9f9;
     padding: 1rem;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center; /* Center-align text */
-    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease; /* Adding transition for opacity */
+    text-align: center; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease; 
     
 }
 
@@ -676,9 +676,9 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem; /* Space between rows */
-    max-width: 800px; /* Restrict total width */
-    margin: 0 auto; /* Center-align grid */
+    gap: 2rem; 
+    max-width: 800px; 
+    margin: 0 auto; 
 }
 
 /* Theme Card Styling */
@@ -689,8 +689,8 @@ h2 {
     background-repeat: no-repeat;
     border-radius: 15px;
     overflow: hidden;
-    width: 800px; /* Set fixed width (equivalent to ~20 cm) */
-    height: 75px; /* Default collapsed height (equivalent to ~1.5 cm) */
+    width: 800px; 
+    height: 75px; 
     cursor: pointer;
     transition: transform 0.3s ease, height 0.5s ease;
     opacity: 0.9;
@@ -701,8 +701,8 @@ h2 {
 }
 
 .theme-card.active {
-    height: auto; /* Expand to fit content */
-    padding-bottom: 1rem; /* Add space below */
+    height: auto; 
+    padding-bottom: 1rem; 
 }
 
 /* Content Container */
@@ -730,13 +730,13 @@ h2 {
 }
 
 .theme-card.active .theme-title {
-    transform: translateY(-10px); /* Move up slightly when expanded */
+    transform: translateY(-10px);
     color: var(--accent-yellow);
 }
 
 /* Description Styling */
 .theme-description {
-    display: none; /* Hidden by default */
+    display: none; 
     font-family:Georgia, 'Times New Roman', Times, serif;
     opacity: 0;
     margin-top: 0.5rem;
@@ -748,28 +748,28 @@ h2 {
 }
 
 .theme-card.active .theme-description {
-    display: block; /* Show when card is active */
+    display: block; 
     opacity: 1;
-    transform: translateY(10px); /* Smoothly appear below title */
+    transform: translateY(10px); 
 }
 
 
 .theme-image {
-    display: none; /* Hidden by default */
-    width: 50%; /* Adjust the width to fit within the card */
-    height:200px; /* Maintain aspect ratio */
-    border-radius: 15px; /* Curved sides */
-    margin: 1rem 0; /* Space around the image */
+    display: none; 
+    width: 50%; 
+    height:200px; 
+    border-radius: 15px; 
+    margin: 1rem 0; 
     transition: opacity 0.5s ease, transform 0.5s ease;
-    border: 2px solid #c5dee2; /* Simple white border */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for better visibility */
+    border: 2px solid #c5dee2; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
   
 }
 
 .theme-card.active .theme-image {
-    display: block; /* Show when card is active */
-    opacity: 1; /* Fade-in effect */
-    transform: translateY(10px); /* Smooth appearance */
+    display: block; 
+    opacity: 1; 
+    transform: translateY(10px); 
 }
 
 
@@ -780,10 +780,10 @@ h2 {
 
 .guidelines-grid {
     display: flex;
-    gap: 2rem; /* Spacing between the cards */
-    justify-content: center; /* Center-align the grid content */
-    align-items: center; /* Align items vertically to the center */
-    flex-wrap: wrap; /* Ensure cards wrap if there's not enough space */
+    gap: 2rem; 
+    justify-content: center; 
+    align-items: center; 
+    flex-wrap: wrap; 
     margin-top: 2rem;
 }
 
@@ -792,9 +792,9 @@ h2 {
     padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 300px; /* Ensure uniform card width */
-    flex: 1; /* Allow cards to resize proportionally */
-    text-align: center; /* Center-align text */
+    max-width: 300px; 
+    flex: 1; 
+    text-align: center; 
     transition: transform 0.3s ease;
 }
 .guidelines-card2{
@@ -802,20 +802,20 @@ h2 {
     padding: 1.8rem;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 300px; /* Ensure uniform card width */
-    flex: 1; /* Allow cards to resize proportionally */
-    text-align: center; /* Center-align text */
+    max-width: 300px; 
+    flex: 1; 
+    text-align: center;
     transition: transform 0.3s ease;
 }
 
 .guidelines-card1:hover,.guidelines-card2:hover{
-    transform: translateY(-5px); /* Add a hover effect */
+    transform: translateY(-5px); 
 }*/
 
 .guidelines-card h3 {
     font-size: 1.2rem;
     margin-bottom: 1rem;
-    color: var(--primary-blue); /* Adjust color for headings */
+    color: var(--primary-blue); 
 }
 
 
@@ -1059,11 +1059,11 @@ h2 {
 }
 
 .committee-card img {
-    width: 120px; /* Adjust width as needed */
-    height: 130px; /* Adjust height as needed */
-    border-radius: 15px; /* Curved corners */
+    width: 120px; 
+    height: 130px;
+    border-radius: 15px; 
     margin-bottom: 1rem;
-    object-fit:contain /* Ensures the image fits properly */
+    object-fit:contain 
     border 2px solid #0056b3;
 }
 
@@ -1137,45 +1137,45 @@ h3 {
 
 /* Each Hotel Box */
 .hotel-box {
-    width: 250px; /* Increase box size */
-    height: 200px; /* Adjust height */
-    background-color: #f0f0f0; /* Light background */
-    border-radius: 8px; /* Rounded corners */
-    overflow: hidden; /* Ensures image fits well */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    width: 250px; 
+    height: 200px; 
+    background-color: #f0f0f0; 
+    border-radius: 8px; 
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth move and shadow effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
 
 .hotel-box img {
     width: 100%;
-    height: 100px; /* Adjust height for the image */
+    height: 100px; 
     object-fit: cover;
 }
 
 /* Hotel Name Styling */
 .hotel-name {
-    margin-top: 10px; /* Space between image and name */
+    margin-top: 10px; 
     font-size: 1.1em;
     color: #333;
     font-weight: bold;
-    background: none; /* Remove background */
+    background: none; 
 }
 
 /* Hotel Distance Styling */
 .hotel-distance {
-    font-size: 1em; /* Make the distance text larger for readability */
+    font-size: 1em; 
     color: #666;
     margin-top: 5px;
 }
 
 /* Hover Effect */
 .hotel-box:hover {
-    transform: translateY(-10px); /* Moves the box upward */
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+    transform: translateY(-10px); 
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); 
 }
 
 /* Map Styling */
@@ -1471,25 +1471,25 @@ html {
 }
 
 .back-to-top {
-    position: fixed; /* Fix it to the viewport */
-    bottom: 20px; /* Distance from the bottom */
-    right: 20px; /* Distance from the right */
-    z-index: 100; /* Ensure it's above other elements */
+    position: fixed; 
+    bottom: 20px; 
+    right: 20px; 
+    z-index: 100; 
 }
 
 .back-to-top a {
     background-color: #1d7478;
     color: #ffffff;
     font-size: 14px;
-    width: 40px; /* Equal width and height */
-    height: 40px; /* Equal width and height */
-    border-radius: 50%; /* Make it circular */
+    width: 40px; 
+    height: 40px; 
+    border-radius: 50%;
     text-decoration: none;
-    display: flex; /* Flexbox for centering */
-    align-items: center; /* Center vertically */
-    justify-content: center; /* Center horizontally */
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
     transition: background-color 0.3s ease, transform 0.3s ease;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Optional: add a shadow */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); 
 }
 
 .back-to-top a:hover {
@@ -1498,7 +1498,7 @@ html {
 }
 
 .back-to-top i {
-    font-size: 18px; /* Icon size remains unchanged */
+    font-size: 18px; 
 }
 /* Responsive Design */
 @media screen and (max-width: 768px) {
@@ -1644,7 +1644,7 @@ html {
     }
 
     .hero-image img {
-        width: 100%;  /* Maintain current size on mobile */
+        width: 100%;  
     }
 
     .countdown {
@@ -1876,10 +1876,10 @@ html {
 /* Keyframes for Pure Up-and-Down Movement */
 @keyframes upAndDown {
     0%, 100% {
-        transform: translateY(0); /* No horizontal movement */
+        transform: translateY(0); 
     }
     50% {
-        transform: translateY(-5px); /* Upward movement only */
+        transform: translateY(-5px);
     }
 }
 
