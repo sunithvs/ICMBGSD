@@ -40,10 +40,26 @@ body {
     background-color: var(--primary-dark);
     color: var(--text-light);
     line-height: 1.6;
+
+
+
 }
 
+
+
+
+
+
+
+
+
+
+
+/* General Navbar Styles */
 nav {
     position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     padding: 1rem 2rem;
     display: flex;
@@ -54,26 +70,87 @@ nav {
     z-index: 1000;
 }
 
-nav a:hover {
-    color: #007bff;
-    border-bottom: 2px solid #82b3d8;
+.logo-container {
+    display: flex;
+    align-items: center;
 }
+
+.logo {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+}
+
 .nav-links a {
-    color: var(--deep-sea);
     text-decoration: none;
-    margin-left: 2rem;
+    color: var(--deep-sea);
+    font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: var(--accent-blue);
+    color: #007bff;
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.mobile-menu-btn span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #f0f8fa;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        padding: 1rem 2rem;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .mobile-menu-btn {
+        display: flex;
+    }
 }
 
 
 
 
 
-
+/*Hero section*/
 .hero-section {
     background-color: #eaf8f7;
     min-height: 100vh; 
@@ -83,7 +160,12 @@ nav a:hover {
     padding: 3rem 2rem;
     position: relative;
     text-align: center; 
+
+
 }
+
+
+
 
 .hero-content {
     font-family: 'Merriweather', serif;
@@ -104,6 +186,38 @@ h2 {
     line-height: 1.5;
 }
 
+
+
+
+/*logo areaaaa*/
+
+.logos-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px; /* Space between logos */
+    margin-top: 20px;
+}
+
+.agency-logo {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%; /* Circular shape for 1st and 3rd logos */
+    object-fit: cover;
+    border: 2px solid #ccc; /* Optional border */
+}
+
+.exact-shape-logo {
+    width: auto; /* Maintain original width */
+    height: 160px; /* Maintain original height */
+    border-radius: 0; /* No forced border */
+    object-fit: contain; /* Preserve aspect ratio */
+    background: transparent; /* Ensure background is transparent */
+    margin: 0 10px; /* Optional spacing adjustment */
+}
+
+
+
 .event-details p {
     font-size: 1.2rem;
     margin: 0.5rem 0;
@@ -114,11 +228,12 @@ h2 {
     gap: 2rem;
     justify-content: center; 
     margin-bottom: 2rem;
+    font-size: 1.2rem;
 }
 
 .countdown div {
     text-align: center;
-    background: rgba(79, 209, 197, 0.2);
+    background: rgba(112, 177, 190, 0.1);
     padding: 1.5rem;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -148,6 +263,8 @@ h2 {
 
 
 
+
+/*Download brochure*/
 
 .container {
     padding: 0;
@@ -366,7 +483,53 @@ h2 {
 
 
 
+  .dates-content, .registration-content, .contact-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
 
+.date-item, .fee-item {
+    background: rgba(0, 180, 216, 0.1);
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--secondary-blue);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.department-name {
+    margin-bottom: 1rem;
+    padding: 1.5rem;
+    background: rgba(112, 177, 190, 0.1);
+    border-radius: 10px;
+    border-left: 4px solid var(--secondary-blue);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.department-name h3 {
+    color: var(--accent-blue);
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.department-name h4 {
+    color: var(--accent-yellow);
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.association-info {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    opacity: 0.9;
+    border-top: 1px solid rgba(79, 209, 197, 0.2);
+    padding-top: 1rem;
+}
 
 
 
@@ -405,89 +568,30 @@ h2 {
 
 
 .about-section, .themes-section, .dates-section, .registration-section, .contact-section {
+    
     background: linear-gradient(rgba(240, 244, 248, 0.95), rgba(255, 255, 255, 0.95));
 }
 
-.themes-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
 
-.theme-card {
-    background: rgba(0, 180, 216, 0.1);
-    padding: 2rem;
-    border-radius: 10px;
-    border-left: 3px solid var(--accent-blue);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    opacity: 0;
-}
 
-.theme-card:hover {
-    transform: translateY(-5px);
-}
 
-.theme-card i {
-    font-size: 2.5rem;
-    color: var(--accent-blue);
-    margin-bottom: 1.5rem;
-}
 
-.theme-card h3 {
-    color: var(--accent-yellow);
-    font-weight: 600;
-    margin-bottom: 1rem;
-}
 
-.dates-content, .registration-content, .contact-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
 
-.date-item, .fee-item {
-    background: rgba(0, 180, 216, 0.1);
-    padding: 1rem;
-    border-radius: 10px;
-    margin-bottom: 1rem;
-    border-left: 3px solid var(--secondary-blue);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
 
-.department-name {
-    margin-bottom: 3rem;
-    padding: 1.5rem;
-    background: rgba(0, 180, 216, 0.1);
-    border-radius: 10px;
-    border-left: 4px solid var(--secondary-blue);
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
 
-.department-name h3 {
-    color: var(--accent-blue);
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-}
 
-.department-name h4 {
-    color: var(--accent-yellow);
-    font-size: 1.4rem;
-    font-weight: 500;
-    margin-bottom: 1.5rem;
-}
 
-.association-info {
-    font-size: 0.9rem;
-    color: var(--text-light);
-    opacity: 0.9;
-    border-top: 1px solid rgba(79, 209, 197, 0.2);
-    padding-top: 1rem;
-}
+
+
+
+
+
+
+
+
+
+
 
 /* About Section Styles */
 .about-section {
@@ -625,7 +729,7 @@ h2 {
 
 
 /* Speaker Section */
-.speakers-grid {
+.speakers-grid {    
     display: flex;
     flex-wrap: wrap;    
     justify-content: center; 
@@ -671,7 +775,46 @@ h2 {
 
 
 
+
+
+
+
+
 /* Themes Section Styling */
+
+.themes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.theme-card {
+    background: rgba(0, 180, 216, 0.1);
+    padding: 2rem;
+    border-radius: 10px;
+    border-left: 3px solid var(--accent-blue);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    opacity: 0;
+}
+
+.theme-card:hover {
+    transform: translateY(-5px);
+}
+
+.theme-card i {
+    font-size: 2.5rem;
+    color: var(--accent-blue);
+    margin-bottom: 1.5rem;
+}
+
+.theme-card h3 {
+    color: var(--accent-yellow);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
 .themes-grid {
     display: flex;
     flex-direction: column;
@@ -682,6 +825,8 @@ h2 {
 }
 
 /* Theme Card Styling */
+
+
 .theme-card {
     position: relative;
     background-size: cover;
@@ -776,6 +921,12 @@ h2 {
 
 
 
+
+
+
+
+
+
 /* Guid lines  Section */
 
 .guidelines-grid {
@@ -812,11 +963,18 @@ h2 {
     transform: translateY(-5px); 
 }*/
 
-.guidelines-card h3 {
-    font-size: 1.2rem;
+.guidelines-grid h3 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1rem; /* Corrected this line */
     margin-bottom: 1rem;
-    color: var(--primary-blue); 
+    color: #00b4d8; /* Color of the h3 text */
 }
+
+
+
+
+
+
 
 
 
@@ -1707,9 +1865,7 @@ html {
         font-size: 0.85rem;
     }
 
-    .themes-grid {
-        grid-template-columns: 1fr;
-    }
+  
 
     .dates-timeline::before {
         left: 30px;
