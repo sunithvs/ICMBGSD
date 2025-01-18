@@ -30,6 +30,14 @@ function updateCountdown() {
 }
 
 
+
+
+
+
+
+
+
+
 /*visible effect
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -49,10 +57,17 @@ document.addEventListener("DOMContentLoaded", () => {
         observer.observe(section); // Observe each section
     });
 });
-
 */
 
 
+
+
+
+
+
+
+
+//cursor effect
 const cursor = document.createElement("div");
 cursor.className = "custom-cursor";
 document.body.appendChild(cursor);
@@ -111,15 +126,6 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     }, 2000);
 });
 
-// Smooth scroll for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
 
 // Scroll Animation Observer
 const observerOptions = {
@@ -175,6 +181,9 @@ document.addEventListener('click', (e) => {
     }
 });
 
+
+
+
 // Theme Section Interaction
 document.querySelectorAll('.theme-card').forEach(card => {
     card.addEventListener('click', function () {
@@ -187,5 +196,16 @@ document.querySelectorAll('.theme-card').forEach(card => {
             // Expand the clicked card
             this.classList.add('active');
         }
+    });
+});
+
+
+// Smooth scroll for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
     });
 });
