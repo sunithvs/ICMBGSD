@@ -2002,3 +2002,17 @@ img {
         align-items: center; /* Center align logos */
     }
 }
+
+@media (max-width: 768px) {
+    .theme-image {
+        width: 40%; /* Increase width for smaller screens */
+        max-height: 150px; /* Reduce max-height for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .theme-image {
+        width: 70%; /* Full width on very small screens */
+        max-height: 120px; /* Further reduce max-height */
+    }
+}
