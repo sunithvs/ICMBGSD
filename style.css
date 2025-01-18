@@ -165,7 +165,7 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 30px; /* Space between logos */
+    gap: 1px; /* Space between logos */
     margin-top: 20px;
 }
 
@@ -760,13 +760,13 @@ h2 {
 
 /* Title Styling */
 .theme-title {
-    font-size: 1.5rem;
-    font-family:Georgia, 'Times New Roman', Times, serif;
-    font-weight: bold;
-    margin: 0;
-    color: #ffffff;
-    text-align: center;
-    transition: transform 0.3s ease, color 0.3s ease;
+    padding: 1rem; /* Adds padding around the text */
+    font-size: 1.29rem; /* Adjust font size if needed */
+    font-weight: bold; /* Ensures the text is bold */
+    color: #ffffff; /* Text color */
+    text-align: center; /* Centers the text */
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for hover effects */
+    margin: 0; /* Removes default margin */
 }
 
 .theme-card.active .theme-title {
@@ -1728,13 +1728,25 @@ html {
 
 
 @media (max-width: 768px) {
-    .section-header h2 {
-        font-size: 2.2rem;
+    section {
+        padding: 3rem 1rem;
     }
-    
-    .section-header h2::before,
-    .section-header h2::after {
-        width: 20px;
+
+    .section-header h2 {
+        font-size: 2rem;
+    }
+
+    .department-name h3 {
+        font-size: 1.4rem;
+    }
+
+    .department-name h4 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .association-info {
+        font-size: 0.85rem;
     }
 }
 
@@ -1745,7 +1757,7 @@ html {
     }
 
     .about-card {
-        padding: 2rem;
+        padding: 1.5rem;
     }
 
     .about-card h3 {
@@ -1759,7 +1771,7 @@ html {
 
 
 /* Responsive Design */
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
     .footer-container {
         flex-direction: column;
         text-align: center;
@@ -1776,7 +1788,6 @@ html {
     }
 }
 
-
 @media (max-width: 768px) {
     .nav-links {
         position: fixed;
@@ -1808,36 +1819,7 @@ html {
 }
 
 
-/* Updated Media Queries */
 @media (max-width: 768px) {
-    .mobile-menu-btn {
-        display: flex;
-    }
-
-    .nav-links {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        height: 100vh;
-        width: 70%;
-        background-color: var(--primary-dark);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        transition: right 0.3s ease;
-        padding: 2rem;
-    }
-
-    .nav-links.active {
-        right: 0;
-    }
-
-    .nav-links a {
-        margin: 1rem 0;
-        font-size: 1.2rem;
-    }
-
     .hero-section {
         flex-direction: column;
         text-align: center;
@@ -1845,35 +1827,8 @@ html {
         gap: 1rem;
     }
 
-    .hero-image {
-        min-height: 300px;
-        width: 100%;
-    }
-
-    .hero-image img {
-        width: 100%;  
-    }
-
-    .countdown {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem;
-    }
-
-    .countdown div {
-        min-width: 120px;
-    }
-
-    .themes-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .registration-content, .contact-content {
+    .hero-content {
         padding: 1rem;
-    }
-
-    section {
-        padding: 3rem 1rem;
     }
 
     h1 {
@@ -1884,86 +1839,14 @@ html {
         font-size: 1.5rem;
     }
 
-    .about-content {
-        flex-direction: column;
-        gap: 2rem;
-    }
-
-    .section-header h2 {
-        font-size: 2rem;
-    }
-
-    .about-card {
-        padding: 1.5rem;
-    }
-
-    .about-card p {
-        font-size: 1rem;
-    }
-
-    .department-name h3 {
-        font-size: 1.4rem;
-    }
-    
-    .department-name h4 {
-        font-size: 1.2rem;
-        margin-bottom: 1rem;
-    }
-
-    .association-info {
-        font-size: 0.85rem;
-    }
-
-  
-
-    .dates-timeline::before {
-        left: 30px;
-    }
-
-    .date-card {
-        flex-direction: column;
-        align-items: flex-start;
-        padding-left: 60px;
-    }
-
-    .date-icon {
-        position: absolute;
-        left: 0;
-    }
-
-    .registration-content {
-        flex-direction: column;
-    }
-
-    .fee-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .bank-item {
-        flex-direction: column;
-        text-align: center;
-        gap: 0.5rem;
-    }
-
-    .contact-content {
-        flex-direction: column;
-    }
-
-    .info-card {
-        padding: 1.5rem;
-    }
-
-    .contact-form {
-        padding: 1.5rem;
-    }
-
-    .footer-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .social-links {
+    .countdown {
+        flex-wrap: wrap;
         justify-content: center;
+        gap: 1rem;
+    }
+
+    .countdown div {
+        min-width: 120px;
     }
 }
 
@@ -1982,12 +1865,140 @@ html {
 
 @media (max-width: 768px) {
     .themes-grid {
-        grid-template-columns: 1fr; /* Single column for small screens */
-        gap: 1rem; /* Adjust spacing between cards */
+        grid-template-columns: 1fr;
     }
 
     .theme-card {
         width: 100%;
-        text-align: center; /* Center align for consistency */
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .registration-content {
+        flex-direction: column;
+        padding:2rem;
+    }
+
+    .fee-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bank-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-content {
+        flex-direction: column;
+    }
+
+    .info-card {
+        padding: 1.5rem;
+    }
+
+    .contact-form {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .countdown div {
+        min-width: 100px;
+        padding: 0.5rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+}
+
+.back-to-top a {
+    background-color: #1d7478;
+    color: #ffffff;
+    font-size: 14px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.back-to-top a:hover {
+    background-color: #144e56;
+    transform: scale(1.1);
+}
+
+.back-to-top i {
+    font-size: 18px;
+}
+
+@media (hover: none) {
+    .speaker-card:hover, .guidelines-card:hover, .accommodation-card:hover, .committee-card:hover {
+        animation: none;
+        box-shadow: none;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+} 
+
+@media (max-width: 768px) {
+    section {
+        padding: 3rem 1rem;
+    }
+
+    .section-header {
+        margin-bottom: 2rem;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .theme-title {
+        padding: 0rem; /* Increased padding for smaller screens */
+        font-size: 1rem; /* Slightly larger font size for better readability on mobile */
+    }
+}
+@media (max-width: 768px) {
+    .logos-container {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center; /* Center align logos */
     }
 }
