@@ -996,6 +996,53 @@ h2 {
     margin-bottom: 0.5rem;
 }
 
+.bank-details-card {
+    background: rgba(79, 209, 197, 0.05); /* Light background color */
+    padding: 2rem; /* Add padding for better spacing */
+    border-radius: 15px; /* Rounded corners */
+    border: 1px solid rgba(79, 209, 197, 0.1); /* Subtle border */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center; /* Center-align text */
+    max-width: 600px; /* Limit the width for better readability */
+    margin: 0 auto; /* Center the card horizontally */
+}
+
+.bank-details-card p {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.1rem; /* Adjust font size */
+    line-height: 1.6; /* Improve line spacing */
+    color: #2a4365; /* Dark text color for contrast */
+    margin-bottom: 1.5rem; /* Add space below the paragraph */
+    text-align: justify; /* Justify the text for a clean look */
+}
+
+.register-button {
+    background-color: #023e8a; /* Darker background color */
+    padding: 1rem; /* Add padding for better spacing */
+    border-radius: 10px; /* Rounded corners */
+    text-align: center; /* Center the text */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+    cursor: pointer; /* Change cursor to pointer */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    width: 12rem; /* Adjust the width of the blue box */
+    margin: 0 auto; /* Center the button horizontally */
+}
+
+.register-button h4 {
+    color: #ffffff; /* White text color for contrast */
+    margin: 0; /* Remove default margin */
+    font-size: 1.2rem; /* Adjust font size */
+    font-weight: bold; /* Make the text bold */
+}
+
+.register-button:hover {
+    background-color: #022c63; /* Slightly darker background on hover */
+    transform: translateY(-3px); /* Slight upward movement on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
+}
+
+
+
 .fee-item p {
     color: var(--text-light);
     font-size: 1.2rem;
@@ -2014,5 +2061,12 @@ img {
     .theme-image {
         width: 70%; /* Full width on very small screens */
         max-height: 120px; /* Further reduce max-height */
+    }
+}
+
+@media (max-width: 768px) {
+    .register-button {
+        width: 80%; /* Wider on smaller screens */
+        max-width: 300px; /* Maximum width */
     }
 }

@@ -257,6 +257,10 @@ html {
 .back-to-top i {
     font-size: 18px; 
 }
+
+
+
+
 /* Responsive Design */
 @media screen and (max-width: 768px) {
     .footer-container {

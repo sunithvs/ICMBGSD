@@ -1,0 +1,179 @@
+/* Sign-Up and Sign-In Form Styles */
+.signup-form,
+.signin-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.signup-form h2,
+.signin-form h2 {
+    font-size: 2rem;
+    color: #023e8a;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.signup-form p,
+.signin-form p {
+    font-size: 1.1rem;
+    color: #44677f;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.signup-form .form-group,
+.signin-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.signup-form .form-group label,
+.signin-form .form-group label {
+    display: block;
+    font-size: 1rem;
+    color: #2a4365;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.signup-form .form-group input,
+.signin-form .form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1rem;
+    color: #2a4365;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.signup-form .form-group input:focus,
+.signin-form .form-group input:focus {
+    border-color: #00b4d8;
+    box-shadow: 0 0 10px rgba(0, 180, 216, 0.2);
+    outline: none;
+}
+
+.signup-form .submit-btn,
+.signin-form .submit-btn {
+    width: 100%;
+    padding: 1rem;
+    background-color: #023e8a;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.signup-form .submit-btn:hover,
+.signin-form .submit-btn:hover {
+    background-color: #022c63;
+    transform: translateY(-2px);
+}
+
+.signup-link,
+.signin-link {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    color: #2a4365;
+}
+
+.signup-link a,
+.signin-link a {
+    color: #023e8a;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.signup-link a:hover,
+.signin-link a:hover {
+    text-decoration: underline;
+}
+
+/* Remember Me and Forgot Password */
+.remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.remember-forgot label {
+    font-size: 0.95rem;
+    color: #2a4365;
+}
+
+.remember-forgot a {
+    color: #023e8a;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .signup-form,
+    .signin-form {
+        padding: 1.5rem;
+    }
+
+    .signup-form h2,
+    .signin-form h2 {
+        font-size: 1.8rem;
+    }
+
+    .signup-form p,
+    .signin-form p {
+        font-size: 1rem;
+    }
+
+    .signup-form .form-group input,
+    .signin-form .form-group input {
+        font-size: 0.95rem;
+        padding: 0.7rem;
+    }
+
+    .submit-btn {
+        font-size: 1rem;
+        padding: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .signup-form,
+    .signin-form {
+        padding: 1rem;
+    }
+
+    .signup-form h2,
+    .signin-form h2 {
+        font-size: 1.6rem;
+    }
+
+    .signup-form p,
+    .signin-form p {
+        font-size: 0.95rem;
+    }
+
+    .signup-form .form-group input,
+    .signin-form .form-group input {
+        font-size: 0.9rem;
+        padding: 0.6rem;
+    }
+
+    .submit-btn {
+        font-size: 0.95rem;
+        padding: 0.8rem;
+    }
+}
