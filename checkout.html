@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICMBGSD - School of Marine Sciences</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+    <div id="top"></div>
+
+    <!-- Navbar -->
+    <nav>
+        <div style="display: inline-flex; align-items: center;">
+            <img src="images/logo.png" alt="Icon" style="width: 35px; height: 35px; border-radius: 50%; display: block;" />
+            <span style="margin-left: 8px;"><b>ICMBGSD</b></span>
+        </div>
+        <div class="mobile-menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#speakers">Speakers</a>
+            <a href="index.html#themes">Themes</a>
+            <a href="index.html#guidelines">Guidelines</a>
+            <a href="index.html#dates">Important Dates</a>
+            <a href="signup.html">Sign Up</a>
+            <a href="signin.html">Sign In</a>
+            <a href="index.html#committee">Committee</a>
+            <a href="index.html#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <section id="about-school" class="main-section">
+            <div class="container">
+                <!-- Category Dropdown -->
+                <div class="category-dropdown">
+                    <h3 class="category-heading">Select Your Registration Category</h3>
+                    <button class="category-btn" id="category-btn">Select Category</button>
+                    <div class="category-list" id="category-list">
+                        <a href="#" class="category-item" data-value="Category 1">Category 1</a>
+                        <a href="#" class="category-item" data-value="Category 2">Category 2</a>
+                        <a href="#" class="category-item" data-value="Category 3">Category 3</a>
+                        <a href="#" class="category-item" data-value="Category 4">Category 4</a>
+                    </div>
+                    <div id="selected-category" class="selected-category"></div>
+                    <button id="proceed-btn" class="submit-btn" style="display: none;">Proceed to Pay</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3>ICMBGSD 25</h3>
+                <p>
+                    The conference focuses on marine biodiversity, genomics, and sustainable practices, bringing experts together to discuss conservation strategies, cutting-edge research, and innovative solutions for preserving marine ecosystems.
+                </p>
+            </div>
+            <div class="footer-links">
+                <h4>Useful Links</h4>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#speakers">Speakers</a></li>
+                    <li><a href="#themes">Themes</a></li>
+                    <li><a href="#guidelines">Guidelines</a></li>
+                    <li><a href="#dates">Important Dates</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p>
+                    School of Marine Science <br>
+                    Cochin University of Science and Technology<br />
+                    Kalamassery, Kochi<br />
+                    Kerala, India - 682022
+                </p>
+                <p>
+                    <strong>Phone:</strong> +91 8882197762<br />
+                    <strong>Email:</strong> <a href="mailto:icmbgsdcusat@gmail.com">icmbgsdcusat@gmail.com</a>
+                </p>
+            </div>
+        </div>
+        <div class="footer-policy">
+            <a href="privacy.html" target="_blank">Privacy Policy</a> | 
+            <a href="tac.html" target="_blank">Terms and Conditions</a> | 
+            <a href="privacy.html" target="_blank">Refund policy</a>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 ICMBGSD. All Rights Reserved.</p>
+        </div>
+        <div class="back-to-top">
+            <a href="#top" title="Back to top">
+                <i class="fa fa-arrow-up"></i>
+            </a>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Category Dropdown -->
+    <script>
+        // Get elements
+        const categoryBtn = document.getElementById('category-btn');
+        const categoryList = document.getElementById('category-list');
+        const selectedCategory = document.getElementById('selected-category');
+        const proceedBtn = document.getElementById('proceed-btn');
+
+        // Show/hide dropdown list
+        categoryBtn.addEventListener('click', () => {
+            categoryList.style.display = categoryList.style.display === 'block' ? 'none' : 'block';
+        });
+
+        // Handle category selection
+        categoryList.addEventListener('click', (e) => {
+            if (e.target.classList.contains('category-item')) {
+                e.preventDefault();
+                const selectedValue = e.target.getAttribute('data-value');
+                selectedCategory.textContent = `Selected: ${selectedValue}`;
+                categoryList.style.display = 'none'; // Hide the dropdown after selection
+                proceedBtn.style.display = 'block'; // Show the "Proceed to Pay" button
+            }
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!categoryBtn.contains(e.target) && !categoryList.contains(e.target)) {
+                categoryList.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
